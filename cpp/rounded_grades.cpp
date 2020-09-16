@@ -16,19 +16,10 @@ I'm a big fan of mod.
 */
 
 vector<int> gradingStudents(vector<int> grades) {
-    vector<int> ret(grades.size());
-    int mod;
     for (int i; i < grades.size(); i++) {
-        if (grades[i] < 38) {
-            ret[i] = grades[i];
-            continue;
-        }
-        mod = grades[i] % 5;
-        if (mod > 2) {
-            ret[i] = grades[i]+(5-mod);
-        } else {
-            ret[i] = grades[i];
+        if (grades[i] >= 38 && ((grades[i]%5)>2)) {
+            grades[i] = grades[i]+(5-(grades[i] % 5));
         }
     }
-    return ret;
+    return grades;
 }
