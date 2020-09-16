@@ -15,6 +15,8 @@ I'm a big fan of mod.
 
 */
 
+// O(n) time and space.
+
 vector<int> gradingStudents(vector<int> grades) {
     for (int i; i < grades.size(); i++) {
         if (grades[i] >= 38 && ((grades[i]%5)>2)) {
